@@ -23,3 +23,9 @@ heroku --version - check if instaled
 heroku login
 
 heroku create or heroku create name
+
+git push heroku master - remote name is heroku, to connect git with heroku, so he can run the code
+
+heroku open - opens the link of our app
+
+heroku logs - view server logs
