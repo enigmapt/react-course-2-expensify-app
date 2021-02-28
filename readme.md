@@ -10,6 +10,8 @@ git add filename - adiciona o filename para fazer commit
 
 git add . - adiciona tudo para fazer commit
 
+git commit -a -m "message"   -a -> shortcut se quisermos fazer commit logo de ficheiros modified, não de new files.
+
 git commit -m "message" - fazer commit a aquilo que foi added. tem de ter mensagem que descreva o que foi commit ou o porquê do commit
 
 git log - log os vários commits do repositório
@@ -29,3 +31,10 @@ git push heroku master - remote name is heroku, to connect git with heroku, so h
 heroku open - opens the link of our app
 
 heroku logs - view server logs
+
+
+## npm commands
+
+npm install --production - only instals dependencies
+
+npm install - install all dependencies and devDependencies
