@@ -40,3 +40,21 @@ heroku logs - view server logs
 npm install --production - only instals dependencies
 
 npm install - install all dependencies and devDependencies
+
+## firebase commands
+
+firebase.database() - access database funcionalities of the firebase module
+
+.ref() - reference to a specific part of the database. If no arguments are provided, ref points to the root (expensify-b9ec9-default-rtdb)
+
+.set() - set value for the ref. Accepts any data type - string, number.. etc. It's assynchronous, has to send data to server. while doing that, it reads the next lines on the code
+
+
+## promises
+
+Can only do ONE resolve OR reject. If we pass two resolves, only the first will run. 
+
+Resolve: only takes one argument. If needed, pass an object with the properties.
+Reject: only takes one argument.
+
+.then(()=>{}) - only fires for resolves. For rejects, throws a javascript error. to handle error, add .catch(()=>{})
