@@ -16,72 +16,85 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
+export {firebase, database as default};
 
 
 
 
-/////ARRAYS IN FIREBASE
 
-//creating
-// database.ref('notes').push({ //random generated ID. push is used for list based data
-//     title: 'Course Topics',
-//     body: ' React Nativa, Angular, Python '
-// });
 
-//updating 
-// database.ref('notes/-MUdyfj2FEu9f_o4tIGV').remove()
 
-//convert the object to array - forEach
-// database.ref('expenses')
-//   .once('value')
-//   .then((snapshot)=> {
-//     const expenses = [];
 
-//     snapshot.forEach((childSnapshot)=> {
-//         expenses.push({
-//             id: childSnapshot.key,
-//             ...childSnapshot.val()
-//         });
-//     });
 
-//     console.log(expenses)
-//   });
 
-///subscription
-// database.ref('expenses')
-// .on('value', (snapshot) => {
-//     const expenses = [];
 
-//     snapshot.forEach((childSnapshot)=> {
-//         expenses.push({
-//             id: childSnapshot.key,
-//             ...childSnapshot.val()
-//         });
-//     });
-//     console.log(expenses)
+
+
+
+
+
+// /////ARRAYS IN FIREBASE
+
+// //creating
+// // database.ref('notes').push({ //random generated ID. push is used for list based data
+// //     title: 'Course Topics',
+// //     body: ' React Nativa, Angular, Python '
+// // });
+
+// //updating 
+// // database.ref('notes/-MUdyfj2FEu9f_o4tIGV').remove()
+
+// //convert the object to array - forEach
+// // database.ref('expenses')
+// //   .once('value')
+// //   .then((snapshot)=> {
+// //     const expenses = [];
+
+// //     snapshot.forEach((childSnapshot)=> {
+// //         expenses.push({
+// //             id: childSnapshot.key,
+// //             ...childSnapshot.val()
+// //         });
+// //     });
+
+// //     console.log(expenses)
+// //   });
+
+// ///subscription
+// // database.ref('expenses')
+// // .on('value', (snapshot) => {
+// //     const expenses = [];
+
+// //     snapshot.forEach((childSnapshot)=> {
+// //         expenses.push({
+// //             id: childSnapshot.key,
+// //             ...childSnapshot.val()
+// //         });
+// //     });
+// //     console.log(expenses)
+// // })
+
+// //child_removed
+// database.ref('expenses').on('child_removed', (snapshot) => {
+//     console.log(snapshot.key, snapshot.val())
 // })
 
-//child_removed
-database.ref('expenses').on('child_removed', (snapshot) => {
-    console.log(snapshot.key, snapshot.val())
-})
+// //child_changed
+// database.ref('expenses').on('child_changed', (snapshot) => {
+//     console.log(snapshot.key, snapshot.val())
+// })
 
-//child_changed
-database.ref('expenses').on('child_changed', (snapshot) => {
-    console.log(snapshot.key, snapshot.val())
-})
+// //child_added - fires 1 time for all the data already in firebase. rerun for all new expenses
+// database.ref('expenses').on('child_added', (snapshot) => {
+//     console.log(snapshot.key, snapshot.val())
+// })
 
-//child_added - fires 1 time for all the data already in firebase. rerun for all new expenses
-database.ref('expenses').on('child_added', (snapshot) => {
-    console.log(snapshot.key, snapshot.val())
-})
-
-database.ref('expenses').push({
-    description: 'Wow',
-    note: 'Note 5',
-    amount: 15,
-    createAt: 123123123211414
-})
+// database.ref('expenses').push({
+//     description: 'Wow',
+//     note: 'Note 5',
+//     amount: 15,
+//     createAt: 123123123211414
+// })
 
 
 
