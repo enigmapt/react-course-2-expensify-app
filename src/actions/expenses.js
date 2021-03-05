@@ -40,6 +40,28 @@ export const editExpense = (id, updates) => ({
   updates
 });
 
+// SET_EXPENSES
+ export const setExpenses = (expenses) => ({
+   type: 'SET_EXPENSES',
+   expenses
+ });
+
+export const startSetExpenses = () => { // assynchronous action, fetch the data and dispatch setExpenses
+  return (dispatch) => {
+    return database.ref('expenses').once('value').then((snapshot)=> { //fetch
+      const expenses= [];
+
+      snapshot.forEach((childSnapshot) => {//parse
+        expenses.push({
+          id: childSnapshot.key,
+          ...childSnapshot.val()
+        })
+      });
+
+      dispatch(setExpenses(expenses));//dispatch
+    });
+  };
+};
 
 
 //////// Action workflow without assynchronous 
